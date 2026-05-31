@@ -273,6 +273,12 @@ h3 {
     font-size: 2rem;
   }
 
+  .project-links {
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  }
+
     .back-to-top {
     bottom: 1rem;
     right: 1rem;
