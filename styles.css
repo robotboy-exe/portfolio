@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  font-family: "Fira Code", monospace; 
+  font-family: "Fira Code", monospace;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #1f2937;
@@ -233,8 +233,11 @@ h3 {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, background 0.2s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition:
+    opacity 0.3s,
+    visibility 0.3s,
+    background 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
   display: flex;
   align-items: center;
@@ -260,30 +263,30 @@ h3 {
   section {
     padding: 1.5rem;
   }
+
   nav ul {
     gap: 0.75rem;
     flex-wrap: nowrap;
     font-size: 0.9rem;
     overflow-x: auto;
     justify-content: space-evenly;
-    padding-bottom: 0.25rem; /* space for scrollbar */
   }
-  
+
   h1 {
     font-size: 2rem;
   }
 
   .project-links {
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
   }
 
-    .back-to-top {
+  .back-to-top {
     bottom: 1rem;
     right: 1rem;
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.5rem;
-    }
+  }
 }
