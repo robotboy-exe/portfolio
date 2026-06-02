@@ -16,14 +16,21 @@
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="header-container">
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="theme-toggle-wrapper">
+          <button id="themeToggle" class="theme-toggle" aria-label="Dark mode">
+            🌙
+          </button>
+        </div>
+      </div>
     </header>
     <main>
       <section id="home" aria-label="Hero">
@@ -151,8 +158,8 @@
             />
             <h3>Crypto Exchange Frontend (WordPress)</h3>
             <p class="project-description">
-              Responsive crypto exchange frontend with dynamic order forms,
-              user auth, and conditional logic. (Backend not implemented.)
+              Responsive crypto exchange frontend with dynamic order forms, user
+              auth, and conditional logic. (Backend not implemented.)
             </p>
             <div class="tech-stack">
               <span>WordPress</span>
