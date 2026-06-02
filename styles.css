@@ -192,10 +192,10 @@ h3 {
 .project-links {
  display: flex;
   flex-wrap: wrap;
-  row-gap: 0.5rem;      /* smaller vertical gap between rows */
-  column-gap: 1.5rem;   /* larger horizontal gap between items on same row */
+  row-gap: 0.5rem; 
+  column-gap: 1.5rem;   
   margin: auto 1rem 1rem;
-  border-top: 1px solid #e5e7eb;   /* optional subtle separator */
+  border-top: 1px solid #e5e7eb; 
   padding-top: 0.75rem;
 }
 
