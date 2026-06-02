@@ -61,7 +61,7 @@ nav a:hover {
 .theme-toggle-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 0.3rem;
+  margin-top: 0.1rem;
 }
 
 .theme-toggle {
