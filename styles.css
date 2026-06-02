@@ -31,6 +31,14 @@ header {
   margin-bottom: 2rem;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 nav ul {
   display: flex;
   justify-content: center;
@@ -50,14 +58,6 @@ nav a:hover {
 }
 
 /* Theme toggle button */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
 .theme-toggle-wrapper {
   display: flex;
   justify-content: center;
@@ -256,6 +256,11 @@ h3 {
   object-fit: cover;
   background: #d1d5db;
   object-position: top;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-screenshot {
+  transform: scale(1.02);
 }
 
 .project-card h3 {
@@ -383,9 +388,7 @@ h3 {
     flex-direction: column;
     align-items: stretch;
   }
-  nav ul {
-    justify-content: space-between;
-  }
+
   .theme-toggle {
     align-self: flex-end;
   }
@@ -406,5 +409,16 @@ h3 {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .back-to-top,
+  .project-card,
+  .hero-links a {
+    transition: none;
   }
 }
