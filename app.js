@@ -72,7 +72,7 @@ function initCarousel(container) {
     dot.addEventListener('click', () => updateCarousel(idx));
   });
 
-  // Optional: auto-advance every 5 seconds (pause on hover)
+  // auto-advance every 5 seconds (pause on hover)
   let interval = setInterval(nextSlide, 5000);
   container.addEventListener('mouseenter', () => clearInterval(interval));
   container.addEventListener('mouseleave', () => {
@@ -80,5 +80,5 @@ function initCarousel(container) {
   });
 }
 
-// Find all carousels (in case you add more)
+// Find all carousels (in case I add more)
 document.querySelectorAll('.carousel-container').forEach(initCarousel);
