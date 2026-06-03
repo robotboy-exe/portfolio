@@ -69,11 +69,15 @@
       <section id="about" aria-label="About Me">
         <h2>About Me</h2>
         <p>
-          I'm a frontend developer who learned through the Colt Steele Web Dev
-          Bootcamp (Udemy) and a formal web development course at NIIT. I enjoy
-          building responsive, user-friendly web experiences — from WordPress
-          concepts to hand-coded portfolios. I'm currently seeking a trainee
-          role where I can contribute, keep learning, and grow with a team.
+          I'm a frontend developer with formal training from NIIT's web
+          development curriculum, where I built a strong foundation in
+          responsive design and core web technologies. I've also been expanding
+          my skills through Colt Steele's Web Dev Bootcamp (Udemy) – an ongoing
+          journey that sharpens my JavaScript and full‑stack understanding. I
+          enjoy building responsive, user‑friendly web experiences, from
+          WordPress concepts to hand‑coded portfolios. I'm currently seeking a
+          trainee role where I can contribute, keep learning, and grow with a
+          team.
         </p>
       </section>
 
@@ -158,11 +162,42 @@
 
           <!-- Project 3 - WordPress Crypto Concept -->
           <article class="project-card">
-            <img
-              src="images/exchange-placeholder.png"
-              alt="WordPress crypto exchange concept"
-              class="project-screenshot"
-            />
+            <div class="carousel-container">
+              <div class="carousel-slides">
+                <img
+                  src="images/wp-screenshot1.webp"
+                  alt="WordPress landing page"
+                  class="carousel-image active"
+                />
+                <img
+                  src="images/wp-screenshot2.webp"
+                  alt="feature list with icons"
+                  class="carousel-image"
+                />
+                <img
+                  src="images/wp-screenshot3.webp"
+                  alt="Order form with conditional logic"
+                  class="carousel-image"
+                />
+                <img
+                  src="images/wp-screenshot4.webp"
+                  alt="User account dashboard"
+                  class="carousel-image"
+                />
+              </div>
+              <button class="carousel-prev" aria-label="Previous screenshot">
+                ❮
+              </button>
+              <button class="carousel-next" aria-label="Next screenshot">
+                ❯
+              </button>
+              <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
             <h3>Crypto Exchange Frontend (WordPress)</h3>
             <p class="project-description">
               Responsive crypto exchange frontend with dynamic order forms, user
@@ -202,7 +237,7 @@
           <!-- Project 4 - Ping Pong Scorekeeper -->
           <article class="project-card">
             <img
-              src="images/scorekeeper-cropped.png"
+              src="images/scorekeeper.webp"
               alt="Screenshot of ping-pong game"
               class="project-screenshot"
             />

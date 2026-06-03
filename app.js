@@ -34,3 +34,51 @@ if (themeToggle) {
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 }
+
+// Carousel functionality for WordPress project
+function initCarousel(container) {
+  const slides = container.querySelectorAll('.carousel-image');
+  const prevBtn = container.querySelector('.carousel-prev');
+  const nextBtn = container.querySelector('.carousel-next');
+  const dots = container.querySelectorAll('.dot');
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  function updateCarousel(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    let newIndex = currentIndex + 1;
+    if (newIndex >= totalSlides) newIndex = 0;
+    updateCarousel(newIndex);
+  }
+
+  function prevSlide() {
+    let newIndex = currentIndex - 1;
+    if (newIndex < 0) newIndex = totalSlides - 1;
+    updateCarousel(newIndex);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => updateCarousel(idx));
+  });
+
+  // Optional: auto-advance every 5 seconds (pause on hover)
+  let interval = setInterval(nextSlide, 5000);
+  container.addEventListener('mouseenter', () => clearInterval(interval));
+  container.addEventListener('mouseleave', () => {
+    interval = setInterval(nextSlide, 5000);
+  });
+}
+
+// Find all carousels (in case you add more)
+document.querySelectorAll('.carousel-container').forEach(initCarousel);
