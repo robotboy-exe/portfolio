@@ -290,7 +290,6 @@ h3 {
   transform: scale(1.02);
 } */
 
-
 .carousel-prev,
 .carousel-next {
   position: absolute;
@@ -305,7 +304,9 @@ h3 {
   border-radius: 50%;
   z-index: 2;
   opacity: 0;
-  transition: opacity 0.2s ease, background 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
 }
 
 .carousel-container:hover .carousel-prev,
@@ -365,6 +366,70 @@ h3 {
   background: rgba(255, 255, 255, 0.9);
   transform: scale(1.1);
 }
+
+
+/* Container for all project images - Border-to-Border Layout */
+.project-visuals-wrapper {
+  display: grid;
+  grid-template-columns: 1fr; /* Single stacked column on mobile viewports */
+  gap: 2px; /* Ultra-thin sleek developer line separating the images */
+  margin: 0;
+  padding: 0; /* REMOVED PADDING: Allows images to touch the card borders naturally */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #e5e7eb; /* Creates a clean border color line through the gap */
+}
+
+/* Base image styling to guarantee clean rectangular cropping and no overflow */
+.project-visuals-wrapper img {
+  width: 100%;
+  height: 160px; /* Base widescreen rectangle height for mobile views */
+  object-fit: cover;
+  object-position: top left; /* Aligns to top-left so dashboards don't lose their sidebars */
+  margin: 0;
+  display: block;
+}
+
+/* The sub-grid for the side supporting images */
+.project-screenshot-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Side-by-side layout images on mobile screens */
+  gap: 2px;
+  width: 100%;
+}
+
+/* Mobile-specific height override for smaller supporting images */
+.project-screenshot-subgrid img {
+  height: 90px;
+}
+
+/* --- Responsive Desktop Layout --- */
+@media (min-width: 768px) {
+  .project-visuals-wrapper {
+    /* Explicitly gives the main screenshot 70% of the width and the subgrid 30% */
+    grid-template-columns: 70% 30%; 
+    height: 240px; /* Securely locks the full element block to your standard card height */
+  }
+  
+  .project-visuals-wrapper .project-screenshot-main {
+    height: 240px; /* Fully matches the standard card depth */
+    width: 100%;
+  }
+
+  .project-screenshot-subgrid {
+    grid-template-columns: 1fr; /* Stacks the small images vertically inside their 30% column */
+    height: 240px;
+    width: 100%;
+  }
+  
+  .project-screenshot-subgrid img {
+    width: 100%; /* 🔥 CRITICAL: Forces images to span the full width of the 30% right column */
+    height: calc(50% - 1px); /* Splits the container height precisely minus the 2px gap spacing */
+    object-fit: cover;
+  }
+}
+
+
 
 .project-screenshot {
   width: 100%;
