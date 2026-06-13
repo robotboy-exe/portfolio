@@ -290,7 +290,6 @@ h3 {
   transform: scale(1.02);
 } */
 
-
 .carousel-prev,
 .carousel-next {
   position: absolute;
@@ -305,7 +304,9 @@ h3 {
   border-radius: 50%;
   z-index: 2;
   opacity: 0;
-  transition: opacity 0.2s ease, background 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
 }
 
 .carousel-container:hover .carousel-prev,
