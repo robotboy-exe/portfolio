@@ -11,6 +11,7 @@
 (function(){
   try{
     var s = localStorage.getItem('so-theme');
+    if (s === null) { var legacy = localStorage.getItem('theme'); if (legacy) { s = legacy; localStorage.setItem('so-theme', legacy); } }
     var dark = s ? s === 'dark' : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
   }catch(e){ document.documentElement.setAttribute('data-theme','light'); }
@@ -22,7 +23,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5/500.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5/700.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/400.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/500.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/600.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/silkscreen@5/400.css" />
 <link rel="stylesheet" href="styles.css" />
@@ -66,7 +66,7 @@
       <div class="hero-grid">
         <div>
           <p class="eyebrow"><span class="led" aria-hidden="true"></span> WEB DEVELOPER // STATUS: ONLINE</p>
-          <h1>Hi, I'm <span class="who" id="scrambleName">Samuel Odeyovwi</span><span class="dotend">,</span><br>Welcome.</h1>
+          <h1>Hi, I'm <span class="who" id="scrambleName" aria-hidden="true">Samuel Odeyovwi</span><span class="visually-hidden">Samuel Odeyovwi</span><span class="dotend">,</span><br>Welcome.</h1>
           <p class="hero-sub">Web Developer focused on building robust backend systems, data-driven applications, and responsive user experiences.</p>
           <div class="hero-links">
             <a class="btn" href="https://github.com/robotboy-exe" target="_blank" rel="noopener noreferrer">GitHub <span class="arw" aria-hidden="true">↗</span></a>
