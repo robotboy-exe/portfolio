@@ -5,23 +5,22 @@ Static portfolio site (Samuel Odeyovwi). No build step, no package manager, no t
 ## Run / verify
 
 - No build step — open `index.html` directly or serve: `python -m http.server` (http://localhost:8000).
-- There are no tests, lint, or typecheck commands. Verify changes by opening the page in a browser and checking console.
+- No tests, lint, or typecheck. Verify by loading the page and checking the browser console (loads clean, zero errors, in Chromium).
 
 ## Layout
 
-- `index.html` — all markup (sections, project cards, carousel markup).
-- `styles.css` — all styling; uses CSS custom properties, mobile-first, `.dark-mode` on `body`.
+- `index.html` — all markup: sections, project cards, 2 carousels.
+- `styles.css` — all styling; CSS custom properties, mobile-first, `body.dark-mode`.
 - `app.js` — the only script, loaded at the end of `index.html`.
-- `images/` — screenshots; `public/` — resume PDF (`public/Samuel_Odeyovwi_Resume.pdf`).
+- `images/` — project screenshots; `public/` — resume PDF (`public/Samuel_Odeyovwi_Resume.pdf`).
+- README's file tree/project table currently match the repo; trust the code if they drift.
 
 ## Gotchas
 
-- `app.js:2` does `document.getElementById("backToTopBtn")` with **no null check** (unlike `themeToggle`). Removing the button or renaming the ID breaks the whole script.
-- Dark mode = `body.dark-mode` class, persisted to `localStorage["theme"]`, falls back to `prefers-color-scheme`. Any new element must get a dark-mode rule in `styles.css`.
-- Carousel is data-driven: `initCarousel` runs on every `.carousel-container`. Adding another container with `.carousel-image`, `.carousel-prev`, `.carousel-next`, `.dot` works with no JS changes.
-- `README.md`'s file tree and project table are stale (missing the latest `admin-dashboard-mockup.png` / NIIT project). Trust the code, not the README, for current structure.
+- Dark mode = `body.dark-mode`, persisted to `localStorage["theme"]`, falling back to `prefers-color-scheme`. It is applied by `app.js` (script at end of body, no inline anti-FOUC script), so it initializes after load. Any new element needs its own `body.dark-mode` rule in `styles.css`; the footer rule lives at styles.css:467.
+- Carousels are data-driven: `initCarousel` (app.js:49) runs on every `.carousel-container` (app.js:109). Each container needs `.carousel-image` (first one marked `active`), `.carousel-prev`, `.carousel-next`, and one `.dot` per slide (first `.dot` also `active`) — no JS changes required. Container height is hardcoded to 240px (styles.css:263) to match `.project-screenshot`; slides are cropped with `object-fit: cover`, so expect cropping. Slides auto-advance every 5s, pause on hover, and the timer resets on manual interaction; prev/next/dots stay hidden until hover on pointer devices, but are always shown under `@media (hover: none)` (styles.css:370).
+- Project-card links point to external demos/code (GitHub, Webflow, YouTube, Google Drive). They are all `target="_blank"` with `rel="noopener noreferrer"` — keep external hrefs and rel attrs intact when editing cards.
 
 ## Deploy
 
-- Deployed to Netlify free tier; pushing to `main` triggers auto-redeploy (no CI config in repo). Live: https://robotboy-portfolio.netlify.app
-- Project images/links point to external repos and URLs (GitHub, Webflow, YouTube) — keep external hrefs intact when editing cards.
+- Netlify free tier; pushing to `main` auto-redeploys (no CI config in repo). Live: https://robotboy-portfolio.netlify.app
