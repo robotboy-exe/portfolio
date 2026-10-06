@@ -21,12 +21,13 @@ The site is fully responsive, accessible, and dark-mode ready, built with semant
 ## 🛠️ Tech Stack (So Far)
 
 * **HTML5** — Semantic structure, ARIA labels, responsive meta tags
-* **CSS3** — Custom properties, Grid, Flexbox, mobile-first media queries, dark mode, `prefers-reduced-motion`
-* **JavaScript** — Dark mode toggle with localStorage, smooth scrolling, back-to-top button, interactive image carousel
-* **Fonts** — Google Fonts:
+* **CSS3** — Design tokens (custom properties), Grid, Flexbox, mobile-first media queries, `data-theme` dark mode, grid background, `prefers-reduced-motion`
+* **JavaScript** — Flash-free theme toggle, scrollspy, scroll reveals, filmstrip galleries with a keyboard-accessible lightbox, scroll-progress rail, back-to-top
+* **Fonts** — Fontsource CDN:
 
-  * *Fira Code* (monospace body text)
-  * *Silkscreen* (retro headings)
+  * *Space Grotesk* (display / headings)
+  * *IBM Plex Mono* (labels, code, metadata)
+  * *Silkscreen* (pixel accents)
 
 *This stack will expand as I add React, TypeScript, and other technologies.*
 
@@ -36,38 +37,37 @@ The site is fully responsive, accessible, and dark-mode ready, built with semant
 
 * 🌗 **Dark / Light Mode**
 
-  * Respects system preferences
-  * Allows manual toggling
-  * Saves user choice
+  * Flash-free — applied before first paint via a `<head>` bootstrap
+  * Respects system preferences and manual toggling
+  * Saves the user's choice (`localStorage["so-theme"]`, with legacy `theme` migration)
 
 * 📱 **Fully Responsive**
 
-  * Mobile, tablet, and desktop support
+  * Mobile, tablet, and desktop support (320px up)
   * No horizontal scrolling
 
-* 🖼️ **Interactive Carousel**
+* 🖼️ **Interactive Galleries**
 
-  * Four screenshots of the WordPress crypto project
-  * Four screenshots of the AI-Coached Screening Practice project
-  * Auto-advance functionality
-  * Pause on hover
-  * Hover-reveal navigation controls
+  * Filmstrip galleries for the WordPress crypto and AI-Coached projects
+  * Thumbnail strip plus prev/next controls
+  * Keyboard navigation and an enlarged lightbox `<dialog>` with focus return
 
-* 🔝 **Back-to-Top Button**
+* 🧭 **Navigation & Feedback**
 
-  * Appears after scrolling 300px
-  * Smooth scroll animation
+  * Scrollspy nav and scroll-progress rail (desktop)
+  * Scroll reveals that respect reduced motion
+  * Back-to-top button after scrolling
 
 * ♿ **Accessibility**
 
-  * Semantic HTML
-  * ARIA labels
+  * Semantic HTML and ARIA labels
+  * Screen-reader-safe animated hero name
   * Reduced-motion support
 
 * 🧩 **Modular CSS**
 
-  * Easy to maintain
-  * Easy to extend
+  * Design tokens (custom properties) for colour, type, and spacing
+  * Easy to maintain and extend
 
 ---
 
@@ -86,8 +86,6 @@ Planned additions and improvements:
 * Improved performance audits
 
 * Image optimization
-
-* Enhanced carousel or lightbox experience
 
 * Serverless contact form
 
