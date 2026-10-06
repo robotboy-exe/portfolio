@@ -457,6 +457,17 @@ h3 {
   text-decoration: underline;
 }
 
+.site-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+body.dark-mode .site-footer {
+  color: #cbd5e6;
+}
+
 /* Back to Top Button */
 .back-to-top {
   position: fixed;
