@@ -2,7 +2,7 @@
 
 🚧 **Active Development** • Portfolio v1
 
-> Frontend developer portfolio — a living project that evolves with my skills. Currently showcases hand-coded projects, a Webflow landing page, a WordPress concept, and a custom JavaScript scorekeeper.
+> Frontend developer portfolio — a living project that evolves with my skills. Currently showcases hand-coded projects, an AI-assisted Cloudflare Pages app, a Webflow landing page, a WordPress concept, and a custom JavaScript scorekeeper.
 
 🔗 **Live Site:** https://robotboy-portfolio.netlify.app
 
@@ -48,6 +48,7 @@ The site is fully responsive, accessible, and dark-mode ready, built with semant
 * 🖼️ **Interactive Carousel**
 
   * Four screenshots of the WordPress crypto project
+  * Four screenshots of the AI-Coached Screening Practice project
   * Auto-advance functionality
   * Pause on hover
   * Hover-reveal navigation controls
@@ -96,6 +97,8 @@ Planned additions and improvements:
 
 | Project                                  | Description                                                                                             | Tech                               |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| **AI-Coached Screening Practice**        | Timed teamwork-prompt practice with Whisper + LLM Micro-Coach scoring, on a $0 Cloudflare Pages stack    | JavaScript, AI Dev, Cloudflare, Groq |
+| **Institutional Management & Learning Platform** | Role-driven web app for Admin/Student/Prospect workflows with PHP auth and admissions pipeline   | PHP, SQL, AI Dev, JavaScript       |
 | **This Portfolio**                       | The site you're looking at — my main hub for showcasing work and growth                                 | HTML, CSS, JavaScript              |
 | **SaaS Landing Page (Webflow)**          | Responsive marketing page built with Webflow                                                            | Webflow                            |
 | **Crypto Exchange Frontend (WordPress)** | Concept featuring dynamic forms, user authentication, and conditional logic                             | WordPress, Elementor, Form Builder |
@@ -146,8 +149,13 @@ portfolio/
 ├── public/
 │   └── Samuel_Odeyovwi_Resume.pdf
 ├── images/
+│   ├── admin-dashboard-mockup.png
 │   ├── robotboy-portfolio.webp
 │   ├── saas-landing-page-4e8914.webflow.io_.webp
+│   ├── screening-practice-coach-feedback.webp
+│   ├── screening-practice-practice.webp
+│   ├── screening-practice-setup.webp
+│   ├── screening-practice-complete.webp
 │   ├── wp-screenshot1.webp
 │   ├── wp-screenshot2.webp
 │   ├── wp-screenshot3.webp
