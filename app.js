@@ -3,15 +3,16 @@ const backToTopBtn = document.getElementById("backToTopBtn");
 
 // Show button when user scrolls down 300px from top
 window.addEventListener("scroll", function () {
+  if (!backToTopBtn) return;
   if (window.scrollY > 300) {
     backToTopBtn.classList.add("show");
   } else {
     backToTopBtn.classList.remove("show");
   }
-});
+}, { passive: true });
 
 // Smooth scroll to top when clicked
-backToTopBtn.addEventListener("click", function () {
+backToTopBtn?.addEventListener("click", function () {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -21,7 +22,9 @@ backToTopBtn.addEventListener("click", function () {
 // Dark mode toggle
 const themeToggle = document.getElementById("themeToggle");
 if (themeToggle) {
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
     document.body.classList.add("dark-mode");
@@ -66,18 +69,33 @@ function initCarousel(container) {
     updateCarousel(newIndex);
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  let interval;
+  function startInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  if (prevBtn)
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      startInterval();
+    });
+  if (nextBtn)
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      startInterval();
+    });
   dots.forEach((dot, idx) => {
-    dot.addEventListener('click', () => updateCarousel(idx));
+    dot.addEventListener('click', () => {
+      updateCarousel(idx);
+      startInterval();
+    });
   });
 
   // auto-advance every 5 seconds (pause on hover)
-  let interval = setInterval(nextSlide, 5000);
+  startInterval();
   container.addEventListener('mouseenter', () => clearInterval(interval));
-  container.addEventListener('mouseleave', () => {
-    interval = setInterval(nextSlide, 5000);
-  });
+  container.addEventListener('mouseleave', startInterval);
 }
 
 // Find all carousels (in case I add more)
