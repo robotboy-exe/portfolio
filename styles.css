@@ -119,9 +119,7 @@ section{scroll-margin-top:86px}
 .btn:hover .arw{transform:translate(2px,-2px)}
 .btn-solid{background:var(--acc);border-color:var(--acc);color:var(--bg);font-weight:600}
 .btn-solid:hover{background:var(--acc);filter:brightness(1.08);color:var(--bg)}
-.hero-meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2.4rem}
-.hm{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;color:var(--mut);border:1px dashed var(--line);padding:.45rem .75rem}
-.hm b{color:var(--acc);font-weight:600}
+.hero-meta{margin-top:1.8rem;font-size:.7rem;letter-spacing:.16em;color:var(--mut);text-transform:uppercase}
 
 /* hero trace svg */
 .hero-trace{width:100%;height:auto;max-height:340px}
@@ -170,7 +168,6 @@ section{scroll-margin-top:86px}
 .chips{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem}
 .chips li{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-mono);font-size:.78rem;border:1px solid var(--line2);padding:.42rem .7rem;background:var(--bg);transition:border-color .2s,background .2s,color .2s}
 .chips li:hover{border-color:var(--acc);background:var(--acc-soft)}
-.chip-code{font-size:.6rem;color:var(--acc);letter-spacing:.08em}
 @media(max-width:720px){.skill-groups{grid-template-columns:1fr}}
 
 /* ---------- projects ---------- */
@@ -247,7 +244,6 @@ dialog#lightbox::backdrop{background:rgba(7,9,13,.88)}
 .ports a{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--ink);padding:1rem 1.1rem;border-bottom:1px solid var(--line);transition:background .2s,padding-left .2s}
 .ports li:last-child a{border-bottom:0}
 .ports a:hover{background:var(--acc-soft);padding-left:1.4rem}
-.p-code{font-family:var(--font-px);font-size:.6rem;color:var(--mut);min-width:64px}
 .p-name{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.2em;color:var(--acc);min-width:84px}
 .p-val{font-size:.9rem;overflow-wrap:anywhere;flex:1}
 .p-arw{color:var(--mut);transition:transform .2s}
