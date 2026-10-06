@@ -29,11 +29,18 @@ if (themeToggle) {
   if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
     document.body.classList.add("dark-mode");
     themeToggle.textContent = "☀️";
+    themeToggle.setAttribute("aria-pressed", "true");
+    themeToggle.setAttribute("aria-label", "Toggle light mode");
   }
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     const isDark = document.body.classList.contains("dark-mode");
     themeToggle.textContent = isDark ? "☀️" : "🌙";
+    themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+    themeToggle.setAttribute(
+      "aria-label",
+      isDark ? "Toggle light mode" : "Toggle dark mode"
+    );
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 }
