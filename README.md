@@ -2,7 +2,7 @@
 
 🚧 **Active Development** • Portfolio v1
 
-> Frontend developer portfolio — a living project that evolves with my skills. Currently showcases hand-coded projects, an AI-assisted Cloudflare Pages app, a Webflow landing page, a WordPress concept, and a custom JavaScript scorekeeper.
+> Full stack developer portfolio — a living project that evolves with my skills. Currently showcases hand-coded projects, an AI-assisted Cloudflare Pages app, a Webflow landing page, a WordPress concept, and a custom JavaScript scorekeeper.
 
 🔗 **Live Site:** https://robotboy-portfolio.netlify.app
 
@@ -12,7 +12,7 @@
 
 This repository contains the **current version** of my developer portfolio. It's not a finished product — it will keep changing as I learn new tools, build better projects, and refine my design sense.
 
-Think of it as a **living lab** for my frontend journey.
+Think of it as a **living lab** for my full-stack journey.
 
 The site is fully responsive, accessible, and dark-mode ready, built with semantic HTML5, modern CSS (Grid + Flexbox), and vanilla JavaScript.
 
