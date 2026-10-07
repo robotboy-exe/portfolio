@@ -2,7 +2,7 @@
 
 🚧 **Active Development** • Portfolio v1
 
-> Full stack developer portfolio — a living project that evolves with my skills. Currently showcases hand-coded projects, an AI-assisted Cloudflare Pages app, a Webflow landing page, a WordPress concept, and a custom JavaScript scorekeeper.
+> Full stack developer portfolio — a living project that evolves with my skills. Currently showcases hand-coded projects, an AI-assisted Cloudflare Pages app, a Webflow landing page, and a WordPress concept.
 
 🔗 **Live Site:** https://robotboy-portfolio.netlify.app
 
@@ -100,7 +100,6 @@ Planned additions and improvements:
 | **This Portfolio**                       | The site you're looking at — my main hub for showcasing work and growth                                 | HTML, CSS, JavaScript              |
 | **SaaS Landing Page (Webflow)**          | Responsive marketing page built with Webflow                                                            | Webflow                            |
 | **Crypto Exchange Frontend (WordPress)** | Concept featuring dynamic forms, user authentication, and conditional logic                             | WordPress, Elementor, Form Builder |
-| **Ping Pong Scorekeeper**                | Two-player score tracker with deuce detection (based on Colt Steele's project with custom enhancements) | HTML, CSS, JavaScript              |
 
 Each project card includes a live demo, source code, or video/PDF case study where applicable.
 
@@ -157,8 +156,7 @@ portfolio/
 │   ├── wp-screenshot1.webp
 │   ├── wp-screenshot2.webp
 │   ├── wp-screenshot3.webp
-│   ├── wp-screenshot4.webp
-│   └── scorekeeper.webp
+│   └── wp-screenshot4.webp
 └── README.md
 ```
 
